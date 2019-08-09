@@ -22,13 +22,5 @@ datePattern = re.compile(r"""^(.*?) # all text before the date
 # TODO: Rename the files.
 
 
-
-
 # ctrl + tab to switch between recent tabs
 # always save before running, coderunner saves slow.
-
-
-# TODO: how does this work?: (0|1)?
-test_regex = re.compile(r"(0|1)?")
-mo = test_regex.search("0 burgers are not that good!")
-print(mo.group())
