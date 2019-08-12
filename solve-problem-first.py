@@ -13,14 +13,24 @@ import shutil, re, os
 
 # Path where the folder is located
 directory_path  = ("/Users/ramteechua/Desktop/rename-dates-folder")
+
 # Regex pattern that matches the files being sought out for.
 name_regex = re.compile(r"test-file-\d+")
 
+# Left off: how do I search a folder and grab all the names of the files in the folder and store it in a list?
+# Searches the folder specified for the names that matches the regex and stores the names in a list.
+all_names_list = []
+for folder_name in os.walk(directory_path):
+   print(folder_name)
+    
+print(all_names_list)
 
+#  QUESTION: Is it possible to search a list of names that match with the given regex?
+
+# TODO: look from all_names_list above for the matched file names.
 # List that contains the matched file names.
 # matched_file_names =  # use the findall method here.
 
-# Left off: how do I search a folder and grab all the names of the files in the folder and store it in a list?
 
 
 # Use findall to store matched names into a list?
