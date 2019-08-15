@@ -25,13 +25,22 @@ os.chdir(directory_path)
 #         # TODO: rename using the mo.group()
 #         os.rename(file, )
 
-# TODO: find out what each group contains what in mo.groups()
 for file in os.listdir(directory_path):
     mo = date_pattern.search(file)
     if mo != None:
-        print(file)
-        print(mo.groups())
-        print("----")
+        # TODO: grab the mo.groups() and store it in a variable
+        # TODO: Left of here, check to see if it works.
+        euro_date = mo.group(4) + "-" + mo.group(1) + "-" + mo.group(6)
+        # shutil.move(file, )
+        
+# MM DD to DD MM
+
+# For reference: 
+# 07-12-2002
+# ('', '07', '0', '12', '1', '2002', '20', '')
+# 9-11-1 975
+# ('', '9', None, '11', '1', '1975', '19', '')
+
 
 
 # TODO: Loop over the files in the working directory.
