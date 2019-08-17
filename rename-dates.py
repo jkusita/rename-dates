@@ -25,13 +25,19 @@ os.chdir(directory_path)
 #         # TODO: rename using the mo.group()
 #         os.rename(file, )
 
+
 for file in os.listdir(directory_path):
     mo = date_pattern.search(file)
     if mo != None:
-        # TODO: grab the mo.groups() and store it in a variable
-        # TODO: Left of here, check to see if it works.
-        euro_date = mo.group(4) + "-" + mo.group(1) + "-" + mo.group(6)
+        # Set to DD/MM/YY
+        new_date = mo.group(4) + "-" + mo.group(2) + "-" + mo.group(6)
+        
+        # Left here: find out a way to change the file name using shutil.move()?
         # shutil.move(file, )
+
+        
+# George Hotz: "Yeah, that looks fun."
+
         
 # MM DD to DD MM
 
