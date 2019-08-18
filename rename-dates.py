@@ -25,7 +25,6 @@ os.chdir(directory_path)
 #         # TODO: rename using the mo.group()
 #         os.rename(file, )
 
-
 for file in os.listdir(directory_path):
     mo = date_pattern.search(file)
     if mo != None:
@@ -33,9 +32,11 @@ for file in os.listdir(directory_path):
         new_date = mo.group(4) + "-" + mo.group(2) + "-" + mo.group(6)
         
         # Left here: find out a way to change the file name using shutil.move()?
-        # shutil.move(file, )
+        shutil.move(file, new_date )
 
-        
+        # TODO: try it when there are text in the stara nd the end?
+        # TODO: reserach spotify family problem.
+        # TODO: lazada mouse
 # George Hotz: "Yeah, that looks fun."
 
         
