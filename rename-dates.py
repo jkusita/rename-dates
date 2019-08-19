@@ -1,7 +1,6 @@
 # rename-dates.py - Renames filenames with American MM-DD-YYYY date format to European DD-MM-YYYY.
 
-# sys is just for testing.
-import shutil, os, re, sys
+import shutil, os, re
 
 # Directory of the folder containing the files.
 directory_path = ("/Users/ramteechua/Desktop/rename-dates-folder")
@@ -17,51 +16,17 @@ date_pattern = re.compile(r"""
 
 os.chdir(directory_path)
 
-# # Looks for file in directory.
-# for file in os.listdir(directory_path):
-#     mo = date_pattern.search(file)
-#     if mo != None:
-#         # TODO: what am I renaming it to?
-#         # TODO: rename using the mo.group()
-#         os.rename(file, )
-
 for file in os.listdir(directory_path):
     mo = date_pattern.search(file)
     if mo != None:
-        # Set to DD/MM/YY
-        new_date = mo.group(4) + "-" + mo.group(2) + "-" + mo.group(6)
-        
-        # Left here: find out a way to change the file name using shutil.move()?
-        shutil.move(file, new_date )
+      # Arranged to (text)DD/MM/YY(text)
+      new_date = mo.group(1) + mo.group(4) + "-" + mo.group(2) + "-" + mo.group(6) + mo.group(8)
+      shutil.move(file, new_date ) 
 
-        # TODO: try it when there are text in the stara nd the end?
-        # TODO: reserach spotify family problem.
-        # TODO: lazada mouse
+
 # George Hotz: "Yeah, that looks fun."
-
-        
-# MM DD to DD MM
-
-# For reference: 
-# 07-12-2002
-# ('', '07', '0', '12', '1', '2002', '20', '')
-# 9-11-1 975
-# ('', '9', None, '11', '1', '1975', '19', '')
-
-
-
-# TODO: Loop over the files in the working directory.
-# TODO: Get the different parts of the filename.
-# TODO: Skip files without a date.
-# TODO: Form the European-style filename.
-# TODO: Get the full, absolute file paths.
-# TODO: Rename the files.
-
-# Different Style format:
-# US: mm/dd/yyyy
-# EU: dd/mm/yyyy
-
 # Keyboard shortcuts: 
+# ctrl + g (line number)        
 # ctrl + tab to switch between recent tabs
 # always save before running, coderunner saves slow.
 
