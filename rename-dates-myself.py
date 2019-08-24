@@ -15,11 +15,13 @@ date_pattern = re.compile(r"""
      """, re.VERBOSE)
 
 os.chdir(directory_path)
-
+ 
 # Looks for files that matches the regex inside the folder and changes the name of the file.
-for file in os.listdir(directory_path):
+for file in os.listdir(directory_path): # is directory_path needed to be put here when you used chdir?
     mo = date_pattern.search(file)
     if mo != None:
+      # TODO: write it like how it was written in autoamte (non-hard-coded variables for the parts of the date).
+      # TODO: see how automate's code make it more readable when it's not just random and it's not hardcoded.
       # Arranged to (text)DD/MM/YY(text)
       new_date = mo.group(1) + mo.group(4) + "-" + mo.group(2) + "-" + mo.group(6) + mo.group(8)
       shutil.move(file, new_date ) 
