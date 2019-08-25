@@ -19,7 +19,7 @@ for amerFilename in os.listdir("."):
    # Skips files without a date.
    if mo == None:
       continue
-
+      
    # Get the different parts of the filename.
    beforePart = mo.group(1)
    monthPart = mo.group(2)

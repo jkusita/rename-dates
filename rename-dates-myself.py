@@ -22,8 +22,18 @@ for file in os.listdir(directory_path): # is directory_path needed to be put her
     if mo != None:
       # TODO: write it like how it was written in autoamte (non-hard-coded variables for the parts of the date).
       # TODO: see how automate's code make it more readable when it's not just random and it's not hardcoded.
-      # Arranged to (text)DD/MM/YY(text)
-      new_date = mo.group(1) + mo.group(4) + "-" + mo.group(2) + "-" + mo.group(6) + mo.group(8)
+
+      # Different parts of the filename.
+      before_part = mo.group(1)
+      month_part = mo.group(2)
+      day_part = mo.group(4)
+      year_part = mo.group(6)
+      after_part = mo.group(8)
+
+      # Form the Europoean-style filename.
+      new_date = before_part + day_part + "-" + month_part + "-" + year_part + after_part
+
+      # Rename the file
       shutil.move(file, new_date ) 
 
 
